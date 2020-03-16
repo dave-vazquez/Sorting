@@ -1,4 +1,8 @@
+import os
+os.system("clear")
 # STRETCH: implement Linear Search
+
+
 def linear_search(arr, target):
 
     for i in range(0, len(arr)):
@@ -30,9 +34,13 @@ def binary_search(arr, target):
 
 # STRETCH: write a recursive implementation of Binary Search
 def binary_search_recursive(arr, target, low, high):
-
-    middle = (low+high)//2
+    middle = (low+high) // 2
 
     if len(arr) == 0:
-        return -1  # array empty
-    # TO-DO: add missing if/else statements, recursive calls
+        return -1
+    if target < arr[middle]:
+        return binary_search_recursive(arr, target, low, middle - 1)
+    elif target > arr[middle]:
+        return binary_search_recursive(arr, target, middle + 1, high)
+
+    return middle
