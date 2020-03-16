@@ -1,4 +1,8 @@
+import os
+os.system('clear')
 # TO-DO: Complete the selection_sort() function below
+
+
 def selection_sort(arr):
     # for each element in the array (execpt for last)
     for i in range(0, len(arr) - 1):
@@ -18,11 +22,20 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
+    sorted = False
+    while not sorted:
+        sorted = True
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                sorted = False
 
-    return arr
-
+        if sorted:
+            return arr
 
 # STRETCH: implement the Count Sort function below
+
+
 def count_sort(arr, maximum=-1):
 
     return arr
