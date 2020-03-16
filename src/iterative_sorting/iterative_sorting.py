@@ -44,5 +44,16 @@ def bubble_sort(arr):
 
 
 def count_sort(arr, maximum=-1):
+    count_array = [0] * len(arr)
 
-    return arr
+    for i, el in enumerate(arr):
+        count_array[el] = arr[i]
+
+    return count_array
+
+
+array = [1, 5, 8, 4, 2, 9, 6, 0, 3, 7]
+
+result = count_sort(array)
+
+print(result)
