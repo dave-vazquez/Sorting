@@ -1,14 +1,13 @@
 import os
 os.system('clear')
-# TO-DO: Complete the selection_sort() function below
 
 
 def selection_sort(arr):
-    # for each element in the array (execpt for last)
+    # for each element in the list (execpt for last)
     for i in range(0, len(arr) - 1):
         # initialize the smallest index to i
         smallest = i
-        # for each element in the array beginning at i
+        # for each element in the list beginning at i
         for j in range(i, len(arr)):
             # if an element is smaller than the smallest
             if(arr[j] <= arr[smallest]):
@@ -22,14 +21,22 @@ def selection_sort(arr):
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
+    # initializes sorted to False so loop can start
     sorted = False
     while not sorted:
+        # sorting is true until a swap occurs
         sorted = True
+        # loop through the list up until the last index
+        # if you keep it you wind up comparing the last
+        # index to an index out of bounds
         for i in range(0, len(arr) - 1):
+            # if the element is larger than the one to its right
             if arr[i] > arr[i+1]:
+                # swap
                 arr[i], arr[i+1] = arr[i+1], arr[i]
                 sorted = False
-
+        # only when a full pass through the list occurs
+        # without any swaps can the list be considered sorted
         if sorted:
             return arr
 
