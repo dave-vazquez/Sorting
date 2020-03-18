@@ -1,5 +1,7 @@
 import unittest
+import os
 from searching import *
+os.system("clear")
 
 
 class SearchingTests(unittest.TestCase):

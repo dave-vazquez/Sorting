@@ -1,6 +1,9 @@
 import unittest
 import random
+import os
 from recursive_sorting import *
+os.system("clear")
+
 
 class RecursiveSortingTests(unittest.TestCase):
     def test_merge_sort(self):
@@ -10,10 +13,10 @@ class RecursiveSortingTests(unittest.TestCase):
         arr4 = [0, 1, 2, 3, 4, 5]
         arr5 = random.sample(range(200), 50)
 
-        self.assertEqual(merge_sort(arr1), [0,1,2,3,4,5,6,7,8,9])
+        self.assertEqual(merge_sort(arr1), [0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         self.assertEqual(merge_sort(arr2), [])
         self.assertEqual(merge_sort(arr3), [2])
-        self.assertEqual(merge_sort(arr4), [0,1,2,3,4,5])
+        self.assertEqual(merge_sort(arr4), [0, 1, 2, 3, 4, 5])
         self.assertEqual(merge_sort(arr5), sorted(arr5))
 
     # Uncomment this test to test your in-place merge sort implementation
